@@ -3,7 +3,100 @@
 import { auth } from "@clerk/nextjs/server";
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
-import { getDbUserId } from "./user.action";
+//import { getDbUserId } from "./user.action";
+
+
+export async function getDbUserId() {
+  const { userId: clerkId } = await auth();
+  if (!clerkId) return null;
+
+  const user = await prisma.user.findUnique({
+    where: { clerkId },
+    select: { id: true },
+  });
+
+  return user?.id || null;
+}
+
+export async function getUserByClerkId(clerkId: string) {
+  return prisma.user.findUnique({
+    where: { clerkId },
+    include: {
+      _count: {
+        select: {
+          followers: true,
+          following: true,
+          posts: true,
+        },
+      },
+    },
+  });
+}
+
+export async function syncUser() {
+  const { userId: clerkId } = await auth();
+  if (!clerkId) return;
+
+  const existingUser = await prisma.user.findUnique({
+    where: { clerkId },
+  });
+
+  if (existingUser) return existingUser;
+
+  return prisma.user.create({
+    data: {
+      clerkId,
+      username: `user_${clerkId.slice(-6)}`,
+      email: `${clerkId}@temp.com`,
+    },
+  });
+}
+
+export async function toggleFollow(targetUserId: string) {
+  const currentUserId = await getDbUserId();
+  if (!currentUserId) return;
+
+  const existing = await prisma.follows.findUnique({
+    where: {
+      followerId_followingId: {
+        followerId: currentUserId,
+        followingId: targetUserId,
+      },
+    },
+  });
+
+  if (existing) {
+    await prisma.follows.delete({
+      where: {
+        followerId_followingId: {
+          followerId: currentUserId,
+          followingId: targetUserId,
+        },
+      },
+    });
+  } else {
+    await prisma.follows.create({
+      data: {
+        followerId: currentUserId,
+        followingId: targetUserId,
+      },
+    });
+  }
+}
+
+export async function getRandomUsers() {
+  return prisma.user.findMany({
+    take: 5,
+    orderBy: { createdAt: "desc" },
+    include: {
+      _count: {
+        select: {
+          followers: true,
+        },
+      },
+    },
+  });
+}
 
 export async function getProfileByUsername(username: string) {
   try {

@@ -29,7 +29,7 @@ async function WhoToFollow() {
                     {user.name}
                   </Link>
                   <p className="text-muted-foreground">@{user.username}</p>
-                  <p className="text-muted-foreground">{user._count.followers} followers</p>
+                  <p className="text-muted-foreground">{user._count?.followers ?? 0} followers</p>
                 </div>
               </div>
               <FollowButton userId={user.id} />
