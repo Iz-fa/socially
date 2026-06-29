@@ -22,7 +22,7 @@ Socially is a modern full-stack social media platform built with **Next.js**, **
 - ⚡ Fast server-side rendering and optimized performance with Next.js
 
 ## Live Demo
-👉 [View Live]([https://ecommerce-frontend-xi-wheat.vercel.app/](https://socially-three-beta.vercel.app/))
+👉 [View Live](https://socially-three-beta.vercel.app/)
 
 
 ## Cloning the repository
