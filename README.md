@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Socially
 
-## Getting Started
+Socially is a modern full-stack social media platform built with **Next.js**, **TypeScript**, **Prisma**, and **PostgreSQL**. It features secure authentication with **Clerk**, a responsive user interface built with **shadcn/ui** and **Tailwind CSS**, and a scalable architecture for creating social networking applications.
 
-First, run the development server:
+## ✨ Features
+
+- 🔐 Secure authentication and user management with Clerk
+- 👤 User profiles
+- 📝 Create, edit, and delete posts
+- ❤️ Like posts
+- 💬 Comment on posts
+- 📱 Fully responsive design
+- 🎨 Modern UI built with shadcn/ui and Tailwind CSS
+- 🗄️ PostgreSQL database with Prisma ORM
+- ⚡ Fast server-side rendering and optimized performance with Next.js
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Authentication:** Clerk
+- **Database:** PostgreSQL
+- **ORM:** Prisma
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- PostgreSQL
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+```bash
+git clone https://github.com/Iz-fa/socially.git
+
+cd socially
+
+npm install
+```
+
+Create a `.env` file and add your environment variables (Clerk, PostgreSQL, etc.).
+
+Run the database migrations:
+
+```bash
+npx prisma migrate dev
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📚 What I Learned
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project strengthened my experience with:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Building full-stack applications using Next.js and TypeScript
+- Designing relational databases with PostgreSQL and Prisma
+- Implementing secure authentication with Clerk
+- Creating reusable and responsive UI components
+- Managing server-side rendering and modern web application architecture
+- Writing clean, scalable, and maintainable code
