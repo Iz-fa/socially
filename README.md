@@ -1,9 +1,16 @@
 # Socially
-
 Socially is a modern full-stack social media platform built with **Next.js**, **TypeScript**, **Prisma**, and **PostgreSQL**. It features secure authentication with **Clerk**, a responsive user interface built with **shadcn/ui** and **Tailwind CSS**, and a scalable architecture for creating social networking applications.
 
-## ✨ Features
+## 🛠️ Tech Stack
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Authentication:** Clerk
+- **Database:** PostgreSQL
+- **ORM:** Prisma
+- **Styling:** Tailwind CSS
+- **UI Components:** shadcn/ui
 
+## ✨ Features
 - 🔐 Secure authentication and user management with Clerk
 - 👤 User profiles
 - 📝 Create, edit, and delete posts
@@ -14,17 +21,11 @@ Socially is a modern full-stack social media platform built with **Next.js**, **
 - 🗄️ PostgreSQL database with Prisma ORM
 - ⚡ Fast server-side rendering and optimized performance with Next.js
 
-## 🛠️ Tech Stack
+## Live Demo
+👉 [View Live]([https://ecommerce-frontend-xi-wheat.vercel.app/](https://socially-three-beta.vercel.app/))
 
-- **Framework:** Next.js
-- **Language:** TypeScript
-- **Authentication:** Clerk
-- **Database:** PostgreSQL
-- **ORM:** Prisma
-- **Styling:** Tailwind CSS
-- **UI Components:** shadcn/ui
 
-## 🚀 Getting Started
+## Cloning the repository
 
 ### Prerequisites
 
